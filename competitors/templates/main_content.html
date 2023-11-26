@@ -1,0 +1,24 @@
+{% load static %}
+<div class="container-fluid">
+    <h1 class="text-center p-5">Operación Triunfo 2023</h1>
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-3 offset-md-1">
+            <a href="{% url "teachers:dashboard" %}">
+                <img src="{% static "img/teachers.jpeg" %}" alt="" class="main-img">
+                <p>Profesorado</p>
+            </a>
+        </div>
+        <div class="col-10 col-md-3">
+            <a href="{% url "competitors:dashboard" %}">
+                <img src="{% static "img/competitors.jpg" %}" alt="" class="main-img">
+                <p>Concursantes</p>
+            </a>
+        </div>
+        <div class="col-10 col-md-3">
+            <a href="{% url "judge:dashboard" %}">
+                <img src="{% static "img/judge.jpg" %}" alt="" class="main-img">
+                <p>Jurado</p>
+            </a>
+        </div>
+    </div>
+</div>

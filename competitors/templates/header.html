@@ -1,0 +1,25 @@
+{% load static %}
+<div id="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a href="{% url "main" %}"><img src="{% static "img/ot-icon.png" %}" alt="" class="header-img"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {% if section == "teachers" %}active{% endif %}" href="{% url "teachers:dashboard" %}">Profesorado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if section == "competitors" %}active{% endif %}" href="{% url "competitors:dashboard" %}">Concursantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if section == "judges" %}active{% endif %}" href="{% url "judge:dashboard" %}">Jurado</a>
+                    </li>
+                </ul>
+                {% include "search.html" %}
+            </div>
+        </div>
+    </nav>
+</div>

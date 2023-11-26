@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} {{ competitor }} {% endblock %}
+{% block content %}
+    {% with music_styles=competitor.music_styles.all%}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5 offset-md-1">
+                <img src="{% if competitor.avatar %} {{ competitor.avatar.url }} {% else %} {{ competitor.get_avatar }} {% endif%}" alt="" class="competitor mx-auto d-block rounded-circle">
+                <br>
+                <h2 class="text-center">{{ competitor }}</h2>
+            </div>
+            <div class="col-12 col-sm-12 col-md-5">
+                <p><i class="bi bi-geo-alt-fill"></i> {{ competitor.city }}</p>
+                <p><i class="bi bi-calendar3"></i> {{ competitor.birthdate }}</p>
+                <p><i class="bi bi-music-note-beamed"></i> {{ music_styles|join:", " }}</p>
+                <p><i class="bi bi-lightbulb-fill"></i> {{ competitor.job }}</p>
+                <p><i class="bi bi-star-fill"></i> {{ competitor.hobbies }}</p>
+            </div>
+
+        </div>
+
+    </div>
+    {% endwith %}
+{% endblock %}

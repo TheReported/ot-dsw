@@ -1,0 +1,7 @@
+{% block content%}
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" aria-label="Search" id="search-field">
+        <button id="search-btn" class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+        {% csrf_token %}
+    </form>
+{% endblock %}

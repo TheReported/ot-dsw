@@ -1,0 +1,34 @@
+body {
+    padding: 5px;
+    margin: 5px;
+}
+
+.header-img {
+    border-radius: 50%;
+    width: 70px;
+}
+
+ul {
+    margin-left: 5%;
+}
+
+.competitor {
+
+    border-radius: 50%;
+    width: 50%;
+}
+
+.judge {
+    border-radius: 50%;
+    width: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-img {
+    width: 50%;
+    border-radius: 20%;
+}

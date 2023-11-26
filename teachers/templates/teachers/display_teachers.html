@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} {{ section.title }} {% endblock %}
+{% block content %}
+    <div id="content" class="container-fluid">
+        <div class="row">
+            {% for teacher in teachers %}
+                <div class="col-4 col-sm-3 col-md-2">
+                    <a href="{{ teacher.get_absolute_url }}">
+                        <img src="{% if teacher.avatar %} {{ teacher.avatar.url }} {% else %} {{ teacher.get_avatar }} {% endif %} " alt="" class="judge mx-auto d-block">
+                        <p class="text-center">{{ teacher }}</p>
+                    </a>
+                </div>
+            {% empty %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

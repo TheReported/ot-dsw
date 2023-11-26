@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} {{ teacher }} {% endblock %}
+{% block content%}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5 offset-md-1">
+                <img src="{{ teacher.get_avatar.url }}" alt="" class="competitor mx-auto d-block rounded-circle">
+                <br>
+                <h2 class="text-center">{{ teacher }}</h2>
+            </div>
+            <div class="col-12 col-sm-12 col-md-5">
+                <p><i class="bi bi-lightbulb-fill"></i> {{ teacher.subject }}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

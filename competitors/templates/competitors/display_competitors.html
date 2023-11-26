@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} {{ section.title }} {% endblock %}
+{% block content %}
+    <div id="content" class="container-fluid">
+        <div class="row">
+            {% for competitor in competitors %}
+                <div class="col-4 col-sm-3 col-md-2">
+                    <a href="{{ competitor.get_absolute_url }}">
+                        <img src="{% if competitor.avatar %} {{ competitor.avatar.url }} {% else %} {{ competitor.get_avatar }} {% endif%}" alt="" class="competitor mx-auto d-block">
+                        <p class="text-center">{{ competitor }}</p>
+                    </a>
+                </div>
+            {% empty %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
