@@ -32,3 +32,11 @@ a {
     width: 50%;
     border-radius: 20%;
 }
+
+.avatar {
+    width: 10%;
+}
+
+.active {
+    background-color: rgba(13, 116, 235, 0.61);
+}

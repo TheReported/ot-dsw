@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-5 offset-md-1">
-                <img src="{{ teacher.get_avatar.url }}" alt="" class="competitor mx-auto d-block rounded-circle">
+                <img src="{% if teacher.avatar %} {{ teacher.avatar.url }} {% else %} {{ teacher.get_avatar }} {% endif%}" alt="" class="competitor mx-auto d-block rounded-circle">
                 <br>
                 <h2 class="text-center">{{ teacher }}</h2>
             </div>

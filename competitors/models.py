@@ -6,6 +6,11 @@ from music_styles.models import MusicStyle
 
 
 class Competitor(models.Model):
+    class Status(models.TextChoices):
+        ACTIVE = 'ACT', 'ACTIVE'
+        NOMINATED = 'NOM', 'NOMINATED'
+        KICKED = 'KIC', 'KICKED'
+
     first_name = models.CharField(max_length=80)
     last_name = models.CharField(max_length=80, blank=True)
     slug = models.SlugField(max_length=250)
@@ -16,7 +21,7 @@ class Competitor(models.Model):
     hobbies = models.TextField(max_length=200)
     avatar = models.ImageField(upload_to='competitors/', blank=True)
     music_styles = models.ManyToManyField(MusicStyle)
-    active = models.BooleanField(default=True)
+    status = models.CharField(max_length=3, choices=Status.choices, default=Status.ACTIVE)
 
     class Meta:
         ordering = ['first_name']

@@ -17,9 +17,21 @@
                     <li class="nav-item">
                         <a class="nav-link {% if section == "judges" %}active{% endif %}" href="{% url "judge:dashboard" %}">Jurado</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if section == "nominated" %}active{% endif %}" href="{% url "competitors:nominated" %}">Nominados</a>
+                    </li>
                 </ul>
                 {% include "search.html" %}
+                <div class="d-inline justify-content-end">
+                    {% if request.user.is_authenticated  %}
+                        <a href="{% url "account:detail" %}"><img src="{% if request.user.photo %}{{ request.user.photo }} {% else %} {% static "img/default_avatar.png" %} {% endif %}" alt="" class="avatar"></a>
+                        <a href="{% url "account:logout" %}"><button type="button" class="btn btn-dark m-3">Logout</button></a>
+                    {% else %}
+                        <a href="{% url "account:login" %}"><button type="button" class="btn btn-dark m-3">Login</button></a>
+                    {% endif %}
+                </div>
             </div>
+            
         </div>
     </nav>
 </div>

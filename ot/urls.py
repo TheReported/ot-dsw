@@ -24,10 +24,11 @@ from competitors import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.show_main, name='main'),
+    path('accounts/', include('account.urls')),
     path('competitors/', include('competitors.urls')),
     path('teachers/', include('teachers.urls')),
     path('judge/', include('judge.urls')),
-    path('search/<str:search>/', views.competitors_list, name='search'),
+    path('search/<str:search>/', views.search_list, name='search'),
 ]
 
 if settings.DEBUG:

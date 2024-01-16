@@ -2,7 +2,7 @@ from django.db import models
 
 
 class MusicStyle(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=80, unique=True)
     slug = models.SlugField(max_length=250)
 
     class Meta:

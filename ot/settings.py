@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n8%!hwhq)(kr!52g(erepk1n_ys^owmuuxc6z+lkqhb9g#ezc9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dsw.pc23.aula109", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'judge.apps.JudgeConfig',
     'teachers.apps.TeachersConfig',
     'music_styles.apps.MusicStylesConfig',
+    'votes.apps.VotesConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,5 +129,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'

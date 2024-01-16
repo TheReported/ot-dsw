@@ -18,7 +18,17 @@
             </div>
 
         </div>
+        {% if competitor.status != 'KIC'%}
+            <form action="{% url 'competitors:vote' competitor.slug %}" method='post'>
+                {% csrf_token %}
+                <input type="submit" value=" {% if competitor.status == 'NOM' %} Salvar a {{ competitor }} {% elif competitor.status == 'ACT'%} Votar para que {{ competitor }} sea nómada favorito {% endif %}">
+                
+            </form>
 
+        {% else %}
+            <h4>Este concursante se encuentra expulsado de la academia</h4>
+        {% endif %}
+            
     </div>
     {% endwith %}
 {% endblock %}
